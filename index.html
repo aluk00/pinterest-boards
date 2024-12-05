@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pinterest board</title>
+    <script src="main.js?nocache=4"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+      a[data-pin-do="embedBoard"] {
+        aspect-ratio: 1 / 1; /* Makes widgets square */
+        width: 250px;
+        max-width: 100%; /* Responsive on smaller screens */
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+      <a data-pin-do="embedBoard" 
+         data-pin-board-width="250" 
+         data-pin-scale-height="250" 
+         data-pin-scale-width="80" 
+         href="https://www.pinterest.at/pet1999/etc/wip-insp/"></a>
+      <a data-pin-do="embedBoard" 
+         data-pin-board-width="250" 
+         data-pin-scale-height="250" 
+         data-pin-scale-width="80" 
+         href="https://www.pinterest.at/pet1999/etc/other-board/"></a>
+    </div>
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    <script>
+      const hideHeader = true; // Always hide header
+      const transparent = true; // Always make transparent
+
+      if (hideHeader) {
+        var styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+          body > span > span[data-pin-log="embed_grid"]:first-child {
+              display: none !important;
+            }
+          body > *:first-child { padding-top: 10px; } `;
+        document.head.appendChild(styleSheet);
+      }
+
+      if (transparent) {
+        var styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+          body > *:first-child { background: transparent !important; } `;
+        document.head.appendChild(styleSheet);
+      }
+    </script>
+  </body>
+</html>
